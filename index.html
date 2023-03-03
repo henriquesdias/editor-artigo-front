@@ -22,24 +22,56 @@
   </header>
   <main>
     <article>
-      <div class="edit">
-        Clique para adicionar um novo elemento
 
-        <div class="box-options">
-          <span>Text</span>
-          <div class="wrapper">
-            <div>
-              <img src="https://atual.network/a54c57df2f849fb08c90f9214902aa5a/icons/text.svg" alt="img-icon">
-            </div>
-            <div>
-              <span>Parágrafo</span>
-              <span>Adicione um parágrafo ao texto</span>
-            </div>
+    </article>
+    <div class="edit" onclick="showBox()">
+      Clique para adicionar um novo elemento
+
+      <div class="box-options">
+        <span>Text</span>
+        <div class="wrapper" onclick="createParagraph()">
+          <div>
+            <img src="https://atual.network/a54c57df2f849fb08c90f9214902aa5a/icons/text.svg" alt="img-icon">
+          </div>
+          <div>
+            <span>Parágrafo</span>
+            <span>Adicione um parágrafo ao texto</span>
+          </div>
+        </div>
+        <div class="wrapper" onclick="createTitle()">
+          <div>
+            <img src="https://atual.network/a54c57df2f849fb08c90f9214902aa5a/icons/text.svg" alt="img-icon">
+          </div>
+          <div>
+            <span>Título</span>
+            <span>Adicione um título ao texto</span>
           </div>
         </div>
 
+        <span>Basic</span>
+
+        <div class="wrapper" onclick="createImage()">
+          <div>
+            <img src="https://atual.network/a54c57df2f849fb08c90f9214902aa5a/icons/image.svg" alt="img-icon">
+          </div>
+          <div>
+            <span>Imagem</span>
+            <span>Envie uma imagem</span>
+          </div>
+        </div>
+
+        <div class="wrapper" onclick="createLine()">
+          <div>
+            <img src="https://atual.network/a54c57df2f849fb08c90f9214902aa5a/icons/text.svg" alt="img-icon">
+          </div>
+          <div>
+            <span>Separador</span>
+            <span>Crie uma linha</span>
+          </div>
+        </div>
       </div>
-    </article>
+
+    </div>
   </main>
   <script src="script.js"></script>
 </body>

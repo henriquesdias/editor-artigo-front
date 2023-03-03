@@ -54,8 +54,10 @@ h1{
   font-family: 'Lato', sans-serif;
   cursor: pointer;
   position: relative;
+  margin-top: 30px;
 }
 .box-options{
+  display: none;
   position: absolute;
   left: 0;
   top: 30px;
@@ -97,4 +99,11 @@ h1{
 .wrapper span:first-child{
   color: black;
   font-weight: 500;
+}
+.show-item{
+  display: flex;
+  flex-direction: column;
+}
+.hide-item{
+  display: none;
 }
