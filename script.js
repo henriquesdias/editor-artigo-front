@@ -4,7 +4,7 @@ function showBox() {
 function createParagraph() {
   const article = document.querySelector("article");
   article.innerHTML += `
-  <div class="paragraph">
+  <div class="paragraph" draggable="true" ondragover="allowDrop(event)" ondrop="drop(event)" ondragstart="drag(event)">
   <div id="input">
     <input type="text" placeholder="Digite o seu parágrafo">
     <button onclick="createSection()">Criar</button>
@@ -20,7 +20,7 @@ function createSection() {
 function createTitle() {
   const article = document.querySelector("article");
   article.innerHTML += `
-  <h1>
+  <h1 draggable="true" ondragover="allowDrop(event)" ondrop="drop(event)" ondragstart="drag(event)">
     <div id="input">
       <input type="text" input="Digite seu título">
       <button onclick="createSection()">Criar</button>
@@ -35,7 +35,7 @@ function createImage() {
     <input type="text" input="Digite a URL da sua imagem">
     <button onclick="createSectionwithImage()">Criar</button>
   </div>
-  <img src="" alt="image" class="hide-item img">
+  <img src="" alt="image" class="hide-item img" draggable="true" ondragover="allowDrop(event)" ondrop="drop(event)" ondragstart="drag(event)">
   `;
 }
 function createSectionwithImage() {
@@ -48,6 +48,24 @@ function createSectionwithImage() {
 function createLine() {
   const article = document.querySelector("article");
   article.innerHTML += `
-  <div class="line"></div>
+  <div class="line" draggable="true" ondragover="allowDrop(event)" ondrop="drop(event)" ondragstart="drag(event)">
+    <div></div>
+  </div>
   `;
+}
+function drag(e) {
+  e.dataTransfer.setData("firstElement", e.target.outerHTML);
+  e.dataTransfer.effectAllowed = "move";
+  setTimeout(() => {
+    e.target.classList.add("hide-item");
+  }, 0);
+}
+function allowDrop(e) {
+  e.preventDefault();
+}
+function drop(e) {
+  e.preventDefault();
+  const data = e.dataTransfer.getData("firstElement");
+  e.target.insertAdjacentHTML("beforeBegin", data);
+  e.dataTransfer.clearData();
 }
